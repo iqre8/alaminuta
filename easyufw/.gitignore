@@ -1,0 +1,57 @@
+# Compiled Python Files
+
+*.pyc
+*.pyo
+*.pyx
+*.exe
+
+# Tox / Distutils / Test Files
+
+.tox
+MANIFEST
+.coverage
+cover
+build/dist
+*.egg-info
+
+# Temporary Files
+
+*~
+.*.sw?
+
+# Eric4 Files
+
+*.e4p
+*.e4m
+
+# PyDev Files
+
+.pydevproject
+.project
+
+# Geany Files
+
+geany_run_script.bat
+.geanyprj
+.geanyproject
+
+# Eclipse Files
+
+.metadata
+
+# Installer Files
+
+installer
+pyinstaller
+
+# Other Files
+
+.idea
+*.iml
+*.bak
+*.log
+*.csv
+*.zip
+*.tar.gz
+
+out

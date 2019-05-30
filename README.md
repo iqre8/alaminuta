@@ -3,7 +3,7 @@ Alaminuta is a sysadmin kit written in python programming
 language
 
 
-**But, what can alaminuta do?**
+__But, what can alaminuta do?__
 
 Alaminuta can:
 
@@ -22,7 +22,7 @@ Get network information
 Manage users
 
 
-**How to install alaminuta?**
+__How to install alaminuta?__
 
 First, install dependencies:
 

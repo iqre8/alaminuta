@@ -1,18 +1,26 @@
-#RAALAMINUTA: AN USEFUL SYSADMIN TOOL
+#ALAMINUTA: AN USEFUL SYSADMIN TOOL
 Alaminuta is a sysadmin kit written in python programming
 language
 
 
-***But, what can alaminuta do?***
+**But, what can alaminuta do?**
+
 Alaminuta can:
 
-Manage processes with psutil
+Mnage processes with psutil
+
 Manage packages with apt (only for debian-based systems)
+
 Enable and disable UFW firewall
+
 Clear thumbnail cache
+
 Encrypt or Decrypt files
+
 Get network information
+
 Manage users
+
 
 **How to install alaminuta?**
 

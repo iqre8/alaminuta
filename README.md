@@ -3,11 +3,11 @@ Alaminuta is a sysadmin kit written in python programming
 language
 
 
-__But, what can alaminuta do?__
+__What can alaminuta do?__
 
 Alaminuta can:
 
-Mnage processes with psutil
+Manage processes with psutil
 
 Manage packages with apt (only for debian-based systems)
 
@@ -27,19 +27,19 @@ __How to install alaminuta?__
 First, install dependencies:
 
 On debian-based distros:
-> sudo apt install ufw python3 python3-pip python-ufw git
+> sudo apt install ufw python3 python3-pip python-ufw python3-distutils-extra git
 
 On fedora :
-> dnf install ufw python3 python3-pip python-ufw git
+> dnf install ufw python3 python3-distutils-extrapython3-pip python-ufw git
 
 CentOS/RHEL:
-> yum install ufw python3 python3-pip python-ufw git
+> yum install ufw python3python3-distutils-extra python3-pip python-ufw git
 
 Arch linux:
->pacman -S ufw python3 python3-pip python-ufw git
+>pacman -S ufw python3 python3-pip python3-distutils-extra python-ufw git
 
 OpenSuse:
-> zypper in ufw python3 python3-pip python-ufw git
+> zypper in ufw python3 python3-pip python3-distutils-extra python-ufw git
 
 Clone this repository:
 

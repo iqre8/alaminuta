@@ -1,2 +1,1 @@
-python-apt==1.6.4
 psutil==5.4.2

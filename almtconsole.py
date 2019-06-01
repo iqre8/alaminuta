@@ -5,6 +5,7 @@ import os
 from process import lst
 from process import kill
 import scriptsrc
+import distro
 clear = lambda: os.system('clear')
 print("|=============================================|")
 print("|                                             |")
@@ -51,23 +52,27 @@ while True:
         if(suboperation == 0):
             continue
     if(operation == 2):
-        clear()
-        print("    [1] Install package")
-        print("    [2] Remove package")
-        print("    [3] Install essential packages")
-        print("    [0] Return to main menu")
-        suboperation = int(input("almf> "))
-        if(suboperation == 1):
-            packagetoinstall = input("Package to install: ")
-            install.install(packagetoinstall)
-        if(suboperation == 2):
-            packagetoremove = input("Package to remove: ")
-            remove.remove(packagetoremove)
-        if(suboperation == 3):
+        distro = distro.os_release_info()['id_like']
+        if(distro == 'ubuntu' or distro == "debian"):
+            clear()
+            print("    [1] Install package")
+            print("    [2] Remove package")
+            print("    [3] Install essential packages")
+            print("    [0] Return to main menu")
+            suboperation = int(input("almf> "))
+            if(suboperation == 1):
+                packagetoinstall = input("Package to install: ")
+                install.install(packagetoinstall)
+            if(suboperation == 2):
+                packagetoremove = input("Package to remove: ")
+                remove.remove(packagetoremove)
+            if(suboperation == 3):
                 scriptsrc.installEssential()
-        if(suboperation == 0):
-            continue
-    if(peration == 3):
+            if(suboperation == 0):
+                continue
+        else:
+            print("Your system doesn't support APT package manager!")
+    if(operation == 3):
         clear()
         print("    [1] Enable firewall (with default rules)")
         print("    [2] Disable firewall")

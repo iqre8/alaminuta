@@ -6,10 +6,11 @@ from process import lst
 from process import kill
 import scriptsrc
 import distro
+from termcolor import cprint
 clear = lambda: os.system('clear')
-print(" __ _| |__ _ _ __ (_)_ _ _  _| |_ __ _ ")
-print("/ _` | / _` | '  \| | ' \ || |  _/ _` |")
-print("\__,_|_\__,_|_|_|_|_|_||_\_,_|\__\__,_|")
+cprint(" __ _| |__ _ _ __ (_)_ _ _  _| |_ __ _ ", "yellow")
+cprint("/ _` | / _` | '  \| | ' \ || |  _/ _` |", "yellow")
+cprint("\__,_|_\__,_|_|_|_|_|_||_\_,_|\__\__,_|", "yellow")
 import firewall
 print("")
 print("")
@@ -25,22 +26,23 @@ def defaultFirewall():
     firewall.allow(995)
 
 def option():
-    print("Enter number of the operation you want:")
-    print("[1] Process Management")
-    print("[2] Package management")
-    print("[3] Firewall management (UFW)")
-    print("[4] Clear thumbnail cache")
-    print("[5] Encrypt or Decrypt files")
-    print("[6] Get network information")
-    print("[7] User management")
+    cprint("Enter number of the operation you want:", "yellow")
+    cprint("[1] Process Management", "magenta")
+    cprint("[2] Package management", "magenta")
+    cprint("[3] Firewall management (UFW)", "magenta")
+    cprint("[4] Clear thumbnail cache", "magenta")
+    cprint("[5] Encrypt or Decrypt files", "magenta")
+    cprint("[6] Get network information", "magenta")
+    cprint("[7] User management", "magenta")
+    cprint("[0] Exit alaminuta", "magenta")
 while True:
     option()
     operation = int(input("almf> "))
     if(operation == 1):
         clear()
-        print("    [1] List processes")
-        print("    [2] Kill Process")
-        print("    [0] Return to main menu")
+        cprint("    [1] List processes", "magenta")
+        cprint("    [2] Kill Process", "magenta")
+        cprint("    [0] Return to main menu", "magenta")
         suboperation = int(input("almf> "))
         if(suboperation == 1):
             lst.listproc()
@@ -53,10 +55,10 @@ while True:
         distro = distro.os_release_info()['id_like']
         if(distro == 'ubuntu' or distro == "debian"):
             clear()
-            print("    [1] Install package")
-            print("    [2] Remove package")
-            print("    [3] Install essential packages")
-            print("    [0] Return to main menu")
+            cprint("    [1] Install package", "magenta")
+            cprint("    [2] Remove package", "magenta")
+            cprint("    [3] Install essential packages", "magenta")
+            cprint("    [0] Return to main menu", "magenta")
             suboperation = int(input("almf> "))
             if(suboperation == 1):
                 packagetoinstall = input("Package to install: ")
@@ -69,30 +71,31 @@ while True:
             if(suboperation == 0):
                 continue
         else:
-            print("Your system doesn't support APT package manager!")
+            cprint("Your system doesn't support APT package manager!", "red")
+            continue
     if(operation == 3):
         clear()
-        print("    [1] Enable firewall (with default rules)")
-        print("    [2] Disable firewall")
-        print("    [0] Return to main menu")
+        cprint("    [1] Enable firewall (with default rules)", "magenta")
+        cprint("    [2] Disable firewall", "magenta")
+        cprint("    [0] Return to main menu", "magenta")
         suboperation = int(input("almf> "))
         if(suboperation == 1):
                 defaultFirewall()
-                print("Firewall started successfully")
+                cprint("Firewall started successfully", "green")
         if(suboperation == 2):
                 firewall.disable()
-                print("Firewall disabled successfully")
+                cprint("Firewall disabled successfully", "green")
         if(suboperation == 0):
             continue
     if(operation == 4):
         clear()
         scriptsrc.cleanCache()
-        print("Thumbnail cache cleaned successfully")
+        cprint("Thumbnail cache cleaned successfully", "green")
     if(operation == 5):
         clear()
-        print("    [1] Encrypt")
-        print("    [2] Decrypt")
-        print("    [0] Return to main menu")
+        cprint("    [1] Encrypt", "magenta")
+        cprint("    [2] Decrypt", "magenta")
+        cprint("    [0] Return to main menu", "magenta")
         suboperation = int(input("almf> "))
         if(suboperation == 1):
             clear()
@@ -107,13 +110,13 @@ while True:
         if(suboperation == 0):
             continue
     if(operation == 6):
-        print("    [1] Get WAN IP")
-        print("    [2] Get LAN IP(s)")
-        print("    [3] Get router IP")
-        print("    [4] Get DNS Nameserver")
-        print("    [5] Get MAC Address for interface")
-        print("    [6] Get current IP Geodata")
-        print("    [0] Return to main menu")
+        cprint("    [1] Get WAN IP", "magenta")
+        cprint("    [2] Get LAN IP(s)", "magenta")
+        cprint("    [3] Get router IP", "magenta")
+        cprint("    [4] Get DNS Nameserver", "magenta")
+        cprint("    [5] Get MAC Address for interface", "magenta")
+        cprint("    [6] Get current IP Geodata", "magenta")
+        cprint("    [0] Return to main menu", "magenta")
         suboperation = int(input("almf> "))
         if(suboperation == 1):
             scriptsrc.wanIp()
@@ -132,10 +135,10 @@ while True:
             continue
     if(operation == 7):
         clear() 
-        print("    [1] Create new user")
-        print("    [2] Delete user")
-        print("    [3] Set root password")
-        print("    [0] Return to main menu")
+        cprint("    [1] Create new user", "magenta")
+        cprint("    [2] Delete user", "magenta")
+        cprint("    [3] Set root password", "magenta")
+        cprint("    [0] Return to main menu", "magenta")
         suboperation = int(input("almf> "))
         if(suboperation == 1):
             newusername = input("Name of the new user: ")
@@ -147,3 +150,6 @@ while True:
             scriptsrc.rootpasswd()
         if(suboperation == 0):
             continue
+
+    if(operation == 0):
+        exit()

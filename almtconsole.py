@@ -7,11 +7,9 @@ from process import kill
 import scriptsrc
 import distro
 clear = lambda: os.system('clear')
-print("|=============================================|")
-print("|                                             |")
-print("|  A    L    A    M    I    N    U    T    A  |")
-print("|                                             |")
-print("|=============================================|")
+print(" __ _| |__ _ _ __ (_)_ _ _  _| |_ __ _ ")
+print("/ _` | / _` | '  \| | ' \ || |  _/ _` |")
+print("\__,_|_\__,_|_|_|_|_|_||_\_,_|\__\__,_|")
 import firewall
 print("")
 print("")

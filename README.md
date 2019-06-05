@@ -1,5 +1,7 @@
 # ALAMINUTA: AN USEFUL SYSADMIN TOOL
 ![Commandline-preview](command-line-preview.png)
+
+
 Alaminuta is a sysadmin kit written in python programming
 language
 

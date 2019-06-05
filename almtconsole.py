@@ -6,11 +6,11 @@ from process import lst
 from process import kill
 import scriptsrc
 import distro
-from termcolor import cprint
+from termcolor import cprint, colored
 clear = lambda: os.system('clear')
-cprint(" __ _| |__ _ _ __ (_)_ _ _  _| |_ __ _ ", "yellow")
-cprint("/ _` | / _` | '  \| | ' \ || |  _/ _` |", "yellow")
-cprint("\__,_|_\__,_|_|_|_|_|_||_\_,_|\__\__,_|", "yellow")
+print(colored(" __ _| |__ _ _ __ (_)_ _ _  _| |_ __ _ ", "yellow", attrs=['bold']))
+print(colored("/ _` | / _` | '  \| | ' \ || |  _/ _` |", "yellow", attrs=['bold']))
+print(colored("\__,_|_\__,_|_|_|_|_|_||_\_,_|\__\__,_|", "yellow", attrs=['bold']))
 import firewall
 print("")
 print("")
@@ -26,7 +26,7 @@ def defaultFirewall():
     firewall.allow(995)
 
 def option():
-    cprint("Enter number of the operation you want:", "yellow")
+    print(colored("Enter number of the operation you want:", "yellow", attrs=['bold']))
     cprint("[1] Process Management", "magenta")
     cprint("[2] Package management", "magenta")
     cprint("[3] Firewall management (UFW)", "magenta")

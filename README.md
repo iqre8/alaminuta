@@ -1,56 +1,36 @@
-# ALAMINUTA: AN USEFUL SYSADMIN TOOL
-![Commandline-preview](command-line-preview.png)
+<h1 align="center">Welcome to alaminuta 👋</h1>
+<h2 align="center"> An useful SysAdmin tool</h2>
+
+## Usage
+
+```sh
+python3 almtconsole.py
+```
+## Instalation
+**First, install dependencies:**
+On debian:
+```sh
+sudo apt install ufw python3 python3-pip python-ufw python3-distutils-extra python3-distutils git python-apt
+```
+If you are using any other linux, search for this packages in the distro repository.
+
+**Then, run alaminuta: **
+```sh
+git clone https://github.com/gabefgonc/alaminuta
+cd alaminuta
+python3 almtconsole.py
+```
 
 
-Alaminuta is a sysadmin kit written in python programming
-language
+## Author
 
+👤 **Gabriel Franco**
 
-__What can alaminuta do?__
+* Github: [@gabefgonc](https://github.com/gabefgonc)
+* E-mail: gabefgonc@gmail.com
 
-Alaminuta can:
+## Show your support
 
-Manage processes with psutil
+Give a star if alaminuta helped you!
 
-Manage packages with apt (only for debian-based systems)
-
-Enable and disable UFW firewall
-
-Clear thumbnail cache
-
-Encrypt or Decrypt files
-
-Get network information
-
-Manage users
-
-
-__How to install alaminuta?__
-
-First, install dependencies:
-
-On debian-based distros:
-> sudo apt install ufw python3 python3-pip python-ufw python3-distutils-extra git python-apt
-
-On fedora :
-> dnf install ufw python3 python3-distutils-extrapython3-pip python-ufw git
-
-CentOS/RHEL:
-> yum install ufw python3 python3-distutils-extra python3-pip python-ufw git
-
-Arch linux:
->pacman -S ufw python3 python3-pip python3-distutils-extra python-ufw git
-
-OpenSuse:
-> zypper in ufw python3 python3-pip python3-distutils-extra python-ufw git
-
-Clone this repository:
-
-> git clone https://github.com/gabefgonc/alaminuta
-
-Install python dependencies with pip3:
-> cd alaminuta; pip3 install -r requirements.txt
-
-And run alaminuta as root:
-
-> sudo ./almtconsole.py
+***

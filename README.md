@@ -14,7 +14,7 @@ sudo apt install ufw python3 python3-pip python-ufw python3-distutils-extra pyth
 ```
 If you are using any other linux, search for this packages in the distro repository.
 
-**Then, run alaminuta: **
+**Then, run alaminuta:**
 ```sh
 git clone https://github.com/gabefgonc/alaminuta
 cd alaminuta

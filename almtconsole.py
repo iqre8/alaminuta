@@ -35,24 +35,24 @@ def option():
     cprint("[6] Get network information", "magenta")
     cprint("[7] User management", "magenta")
     cprint("[0] Exit alaminuta", "magenta")
-def checkForUserOperation():
+def checkForUserOperationAndExecute():
     while True:
         option()
-        operation = int(input("almf> "))
-        if(operation == 1):
+        userOperation = int(input("almf> "))
+        if(userOperation == 1):
             clear()
             cprint("    [1] List processes", "magenta")
             cprint("    [2] Kill Process", "magenta")
             cprint("    [0] Return to main menu", "magenta")
-            suboperation = int(input("almf> "))
-            if(suboperation == 1):
+            userSubOperation = int(input("almf> "))
+            if(userSubOperation == 1):
                 lst.listproc()
-            if(suboperation == 2):
+            if(userSubOperation == 2):
                 pidtokill = int(input("PID of the process to kill: "))
                 kill.kill(pidtokill)
-            if(suboperation == 0):
+            if(userSubOperation == 0):
                 continue
-        if(operation == 2):
+        if(userOperation == 2):
             distro = distro.os_release_info()['id_like']
             if(distro == 'ubuntu' or distro == "debian"):
                 clear()
@@ -60,57 +60,57 @@ def checkForUserOperation():
                 cprint("    [2] Remove package", "magenta")
                 cprint("    [3] Install essential packages", "magenta")
                 cprint("    [0] Return to main menu", "magenta")
-                suboperation = int(input("almf> "))
-                if(suboperation == 1):
+                userSubOperation = int(input("almf> "))
+                if(userSubOperation == 1):
                     packagetoinstall = input("Package to install: ")
                     install.install(packagetoinstall)
-                if(suboperation == 2):
+                if(userSubOperation == 2):
                     packagetoremove = input("Package to remove: ")
                     remove.remove(packagetoremove)
-                if(suboperation == 3):
+                if(userSubOperation == 3):
                     scriptsrc.installEssential()
-                if(suboperation == 0):
+                if(userSubOperation == 0):
                     continue
             else:
                 cprint("Your system doesn't support APT package manager!", "red")
                 continue
-        if(operation == 3):
+        if(userOperation == 3):
             clear()
             cprint("    [1] Enable firewall (with default rules)", "magenta")
             cprint("    [2] Disable firewall", "magenta")
             cprint("    [0] Return to main menu", "magenta")
-            suboperation = int(input("almf> "))
-            if(suboperation == 1):
+            userSubOperation = int(input("almf> "))
+            if(userSubOperation == 1):
                 defaultFirewall()
                 cprint("Firewall started successfully", "green")
-            if(suboperation == 2):
+            if(userSubOperation == 2):
                 firewall.disable()
                 cprint("Firewall disabled successfully", "green")
-            if(suboperation == 0):
+            if(userSubOperation == 0):
                 continue
-        if(operation == 4):
+        if(userOperation == 4):
             clear()
             scriptsrc.cleanCache()
             cprint("Thumbnail cache cleaned successfully", "green")
-        if(operation == 5):
+        if(userOperation == 5):
             clear()
             cprint("    [1] Encrypt", "magenta")
             cprint("    [2] Decrypt", "magenta")
             cprint("    [0] Return to main menu", "magenta")
-            suboperation = int(input("almf> "))
-            if(suboperation == 1):
+            userSubOperation = int(input("almf> "))
+            if(userSubOperation == 1):
                 clear()
                 inputf = input("Enter the input file path: ")
                 outputf = input("Enter the output file path: ")
                 scriptsrc.encrypt(inputf, outputf)
-            if(suboperation == 2):
+            if(userSubOperation == 2):
                 clear()
                 inputf = input("Enter the input file path: ")
                 outputf = input("Enter the output file path: ")
                 scriptsrc.decrypt(inputf, outputf)
-            if(suboperation == 0):
+            if(userSubOperation == 0):
                 continue
-        if(operation == 6):
+        if(userOperation == 6):
             cprint("    [1] Get WAN IP", "magenta")
             cprint("    [2] Get LAN IP(s)", "magenta")
             cprint("    [3] Get router IP", "magenta")
@@ -118,45 +118,45 @@ def checkForUserOperation():
             cprint("    [5] Get MAC Address for interface", "magenta")
             cprint("    [6] Get current IP Geodata", "magenta")
             cprint("    [0] Return to main menu", "magenta")
-            suboperation = int(input("almf> "))
-            if(suboperation == 1):
+            userSubOperation = int(input("almf> "))
+            if(userSubOperation == 1):
                 scriptsrc.wanIp()
-            if(suboperation == 2):
+            if(userSubOperation == 2):
                 scriptsrc.lanIp()
-            if(suboperation == 3):
+            if(userSubOperation == 3):
                 scriptsrc.routerIp()
-            if(suboperation == 4):
+            if(userSubOperation == 4):
                 scriptsrc.dnsNameserver()
-            if(suboperation == 5):
+            if(userSubOperation == 5):
                 iface = input("Interface: ")
                 scriptsrc.macAddress(iface)
-            if(suboperation == 6):
+            if(userSubOperation == 6):
                 scriptsrc.ipGeodata()
-            if(suboperation == 0):
+            if(userSubOperation == 0):
                 continue
-        if(operation == 7):
+        if(userOperation == 7):
             clear() 
             cprint("    [1] Create new user", "magenta")
             cprint("    [2] Delete user", "magenta")
             cprint("    [3] Set root password", "magenta")
             cprint("    [0] Return to main menu", "magenta")
-            suboperation = int(input("almf> "))
-            if(suboperation == 1):
+            userSubOperation = int(input("almf> "))
+            if(userSubOperation == 1):
                 newusername = input("Name of the new user: ")
                 scriptsrc.adduser(newusername)
-            if(suboperation == 2):
+            if(userSubOperation == 2):
                 usertodel = input("Name of the user to delete: ")
                 scriptsrc.deluser(usertodel)
-            if(suboperation == 3):
+            if(userSubOperation == 3):
                 scriptsrc.rootpasswd()
-            if(suboperation == 0):
+            if(userSubOperation == 0):
                 continue
 
-        if(operation == 0):
+        if(userOperation == 0):
             break
 def main():
     showInitialLogo()
-    checkForUserOperation()
+    checkForUserOperationAndExecute()
 
 if __name__ == "__main__":
     main()

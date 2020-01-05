@@ -1,6 +1,15 @@
 <h1 align="center">Welcome to alaminuta 👋</h1>
 <h2 align="center"> An useful SysAdmin tool</h2>
 
+It covers the following aspects on debian based linux systems:
+ - Process Management
+ - Package management
+ - Firewall management (UFW)
+ - Clear thumbnail cache
+ - Encrypt or Decrypt files
+ - Get network information
+ - User management
+
 ## Usage
 
 ```sh
